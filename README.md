@@ -57,7 +57,7 @@ object(argofire\response\ProcessCreditCardResponse)#10 (2) {
       ["GetCommercialCard"]=>
       string(5) "False"
       ["ExtData"]=>
-      string(113) "InvNum=1,CardType=VISA,BatchNum=000000<BatchNum>000000</BatchNum><ExpDate>0520</ExpDate><LastFour>0019</LastFour>"
+      string(113) "InvNum=1,CardType=VISA,BatchNum=000000&lt;BatchNum&gt;000000&lt;/BatchNum&gt;&lt;ExpDate&gt;0520&lt;/ExpDate&gt;&lt;LastFour&gt;0019&lt;/LastFour&gt;"
     }
   }
   ["_wsdlResponseMethod":protected]=>

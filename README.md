@@ -6,9 +6,20 @@ ArgoFire Client API (PHP)
 
 -- Requirements: PHP 5.4+, Zend Framework 1.1+ (Zend_Config_Ini)
 
+Sample Config.Ini:
+<pre>
+argofire.username = ''
+argofire.password = ''
+argofire.vendor = ''
+argofire.host = 'https://dev.ftipgw.com' # (Change for Production)
+argofire.path_recurring = '/admin/ws/recurring.asmx?wsdl' # Should Not Change
+argofire.path_transaction = '/ArgoFire/transact.asmx?wsdl' # Should Not Change
+argofire.path_customerpaymethods = '/customerpaymethods/paymethods.asmx?wsdl' # Should Not Change
+argofire.path_validate = '/ArgoFire/validate.asmx?wsdl' # Should Not Change
+</pre>
+
 
 Usage:
-
 <pre>
 require_once "/path/to/argofire.lib.php"; # Include Library Wrapper
 new \argofire\Config("/path/to/config.ini"); # Initialize Config Values

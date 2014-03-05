@@ -31,7 +31,8 @@ $paymentObject = new \argofire\request\ArgoFirePayment();
     'CardNumber' => '0000000000000000',
     'ExpDate' => '0101',
     'NameOnCard' => 'First Last',
-    'Amount' => '1.00'
+    'Amount' => '1.00',
+    'InvNum' => time()
   ]);
 </pre>
 

@@ -35,7 +35,7 @@ namespace argofire\response;
 
 
         protected function _getElementContents($elementName = null) {
-            if ($elementName)
+            if ($elementName && isset($this->_response->{$this->_wsdlResponseMethod}->{$elementName}))
                 return $this->_response->{$this->_wsdlResponseMethod}->{$elementName};
         }
     }

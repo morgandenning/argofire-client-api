@@ -9,8 +9,17 @@ namespace argofire\response;
         public function __construct($response, $wsdlResponseMethod) {
             $this->_wsdlResponseMethod = $wsdlResponseMethod;
 
-            if (gettype($response->{$this->_wsdlResponseMethod}) == "string")
+            if (gettype($response->{$this->_wsdlResponseMethod}) == "string") {
+                libxml_use_internal_errors(true);
                 $response->{$this->_wsdlResponseMethod} = simplexml_load_string($response->{$this->_wsdlResponseMethod});
+
+                if (count(libxml_get_errors()) > 0) {
+                    $response->{$this->_wsdlResponseMethod} = new \stdClass();
+                    $response->{$this->_wsdlResponseMethod}->code = false;
+                }
+
+                libxml_clear_errors();
+            }
 
             $this->_response = $response;
         }

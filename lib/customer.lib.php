@@ -130,12 +130,14 @@ namespace argofire\request {
 namespace argofire\response {
 
     class CustomerPaymentMethodsResponse extends ArgoFireResponse {
+
 		public function currentAccountNumber($paymentProfileId = false) {
 			foreach ($this->_response->{$this->_wsdlResponseMethod}->PayMethod as $payMethod) {
 				if ($payMethod->Key == $paymentProfileId) {
 					return $payMethod->AccountNumber;
 				}
 			}
+            return false;
 		}
 
 		public function currentCardType($paymentProfileId = false) {
@@ -143,6 +145,7 @@ namespace argofire\response {
 				if ($payMethod->Key == $paymentProfileId)
 					return $payMethod->PaymentType;
 			}
+            return false;
 		}
 
 		public function currentExpDate($paymentProfileId = false) {
@@ -150,6 +153,7 @@ namespace argofire\response {
 				if ($payMethod->Key == $paymentProfileId)
 					return $payMethod->ExpDate;
 			}
+            return false;
 		}
 
 		public function allPaymentProfiles() {

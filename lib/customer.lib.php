@@ -162,8 +162,22 @@ namespace argofire\response {
 		}
 
 		public function allPaymentProfiles() {
-			return $this->_response->{$this->_wsdlResponseMethod}->PayMethod;
+            $payMethods = [];
+            foreach ($this->_response->{$this->_wsdlResponseMethod}->PayMethod as $payMethod) {
+                $payMethods[] = $payMethod;
+            }
+
+            return $payMethods;
 		}
+        
+        public function hasPaymentMethod($iPaymentProfileId = false) {
+            foreach ($this->_response->{$this->_wsdlResponseMethod}->PayMethod as $oPayMethod) {
+                if ($oPayMethod->Key == $iPaymentProfileId)
+                    return true;
+            }
+            
+            return false;
+        }
     }
 
     class ManageCustomerResponse extends ArgoFireResponse {
@@ -184,8 +198,8 @@ namespace argofire\response {
 
     class ManageCheckInfoResult extends ArgoFireResponse {
 
-        public function getCustomerProfileId() {
-            return $this->_getElementContents("CustomerKey");
+        public function getPaymentProfileId() {
+            return $this->_getElementContents("CheckInfoKey");
         }
 
     }

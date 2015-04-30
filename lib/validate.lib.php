@@ -32,6 +32,20 @@ namespace argofire\response {
             else
                 return false;
         }
+
+        public function isValidCardNum() {
+            if ($this->_response->{$this->_wsdlResponseMethod} === (int)0)
+                return true;
+            else
+                return false;
+        }
+
+        public function isValidExpDate() {
+            if ($this->_response->{$this->_wsdlResponseMethod} !== (int)1002 && $this->_response->{$this->_wsdlResponseMethod} !== (int)1006)
+                return true;
+            else
+                return false;
+        }
     }
 
 }

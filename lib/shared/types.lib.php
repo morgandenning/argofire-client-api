@@ -45,11 +45,24 @@ namespace argofire\types;
             'Zip' => '',
             'Street' => '',
             'CVNum' => '',
-            'ExtData' => ''
+            'ExtData' => '<TaxAmt>0.00</TaxAmt>'
         );
 
         static public $checkFields = array(
-            //
+            'TransType' => '',
+            'CheckNum' => '',
+            'TransitNum' => '',
+            'AccountNum' => '',
+            'Amount' => '',
+            'MICR' => '',
+            'NameOnCheck' => '',
+            'DL' => '',
+            'SS' => '',
+            'DOB' => '',
+            'StateCode' => '',
+            'CheckType' => '',
+            'ExtData' => '',
+            'ACH_Payment_Type' => 'PPD'
         );
 
         //
@@ -58,6 +71,34 @@ namespace argofire\types;
             'CcInfoKey' => '',
             'Amount' => '',
             'InvNum' => '',
+            'ExtData' => '<TaxAmt>0.00</TaxAmt>'
+        );
+
+        static public $checkFieldsRecurring = array(
+            'CheckInfoKey' => '',
+            'CheckType' => '',
+            'AccountType' => '',
+            'CheckNum' => '',
+            'MICR' => '',
+            'RawMICR' => '',
+            'AccountNum' => '',
+            'TransitNum' => '',
+            'SS' => '',
+            'DOB' => '',
+            'BranchCity' => '',
+            'DL' => '',
+            'StateCode' => '',
+            'NameOnCheck' => '',
+            'Email' => '',
+            'DayPhone' => '',
+            'Street1' => '',
+            'Street2' => '',
+            'Street3' => '',
+            'City' => '',
+            'StateID' => '',
+            'Province' => '',
+            'PostalCode' => '',
+            'CountryID' => '',
             'ExtData' => ''
         );
     }
@@ -88,21 +129,20 @@ namespace argofire\types;
             'CcNameOnCard' => '',
             'CcStreet' => '',
             'CcZip' => '',
-            'ExtData' => ''
+            'ExtData' => '<TaxAmt>0.00</TaxAmt>'
         );
 
         static public $checkFields = array(
-            'TransType' => '',
-            'CustomerKey' => '',
             'CheckInfoKey' => '',
             'CheckType' => '',
             'AccountType' => '',
             'CheckNum' => '',
             'MICR' => '',
+            'RawMICR' => '',
             'AccountNum' => '',
-            'TransitNum' => '', // Routing Number
-            'SS' => '', // Account Holder Social Security Number
-            'DOB' => '', // Account Holder DOB
+            'TransitNum' => '',
+            'SS' => '',
+            'DOB' => '',
             'BranchCity' => '',
             'DL' => '',
             'StateCode' => '',
@@ -115,6 +155,7 @@ namespace argofire\types;
             'City' => '',
             'StateID' => '',
             'Province' => '',
+            'PostalCode' => '',
             'CountryID' => '',
             'ExtData' => ''
         );
